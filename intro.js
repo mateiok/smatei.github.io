@@ -11,16 +11,6 @@ function getColor() {
 }
 
 
-var  welcome = getWelcomeMsg();
-console.info (welcome);
-
-var summaryElement = document.getElementById('summary');
-console.info ("summaryElement", summaryElement);
-
-var color = getColor();
-summaryElement.style.color = color;
-
-
 function hidePage(page) {
 	var el = document.getElementById(page);
 	el.style.display = 'none';
@@ -29,10 +19,11 @@ function showPage(page) {
 	document.getElementById(page).style.display = 'block';
 }
 
+
+
 function initMenu() {
 	var links = document.querySelectorAll("#top-menu-bar a");
-	console.info(links);
-	for (var i = 0; i < links.length; i++) {
+		for (var i = 0; i < links.length; i++) {
 			links[i].onclick = clickOnMenuItem;
 	}
 }
@@ -53,4 +44,13 @@ function hideAllPages () {
 }
 
 initMenu();
+
+function showSkills () {
+	var skills = ['html', 'css','js'];
+	console.warn ('showSkills', skills);
+	for (var i =0; i < skills.length; i++){
+		console.info("#" + (i+1) +" " + skills[i]);
+	}
+}
+showSkills();
 
