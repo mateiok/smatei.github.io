@@ -45,17 +45,19 @@ function hideAllPages () {
 
 initMenu();
 
-function showSkills () {
+function showSkills() {
 	var skills = ['html', 'css','js'];
-	console.warn ('showSkills', skills)
-	skills.forEach(printSkill);
+	
+	var htmlSkills = skills.map(function(skill, index){
+		return '<li>' + skill.toUpperCase() + '</li>';
+	});
 		
-		function printSkill(skill, index) {
-		console.info("#" + (index +1) + " " + skill);
+		var ul = document.querySelector ('#skills-page ul');
+		ul.innerHTML = htmlSkills.join('');
 
 	}
 	
-}
+
 
 
 	showSkills();
