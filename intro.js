@@ -46,18 +46,30 @@ function hideAllPages () {
 initMenu();
 
 function showSkills() {
-	var skills = ['html', 'css','js'];
+	var skills = [
+		{name: 'html', endorsements: 8, endorsedBy: 'Tolica'}, 
+		{name: 'css', endorsements: 12}, 
+		{name: 'js', endorsements: 20, endorsedBy: 'Sasa'}, 
+		{name: 'node js', endorsements: 3}
+		];
 	
 	var htmlSkills = skills.map(function(skill, index){
-		return '<li>' + skill.toUpperCase() + '</li>';
+		var endorsedBy = skill.endorsedBy;
+		if (endorsedBy) {
+			endorsedBy = ' - ' + endorsedBy;
+		} else {
+			endorsedBy = '';
+		}
+		var endorsements = ` <span class="endorsement"> (${skill.endorsements} ${endorsedBy}) </span>`;
+		return '<li>' + skill.name.toUpperCase() + endorsements + '</li>';
 	});
 		
 		var ul = document.querySelector ('#skills-page ul');
 		ul.innerHTML = htmlSkills.join('');
-
 	}
 	
-
+hideAllPages ();
+showPage ('skills-page');
 
 
 	showSkills();
