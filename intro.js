@@ -53,13 +53,14 @@ function showSkills() {
 		{name: 'node js', endorsements: 3}
 		];
 	
+	skills.sort(function (a, b){
+		return b.endorsements - a.endorsements;
+
+	});
+
 	var htmlSkills = skills.map(function(skill, index){
-		var endorsedBy = skill.endorsedBy;
-		if (endorsedBy) {
-			endorsedBy = ' - ' + endorsedBy;
-		} else {
-			endorsedBy = '';
-		}
+		var endorsedBy = skill.endorsedBy ? ' - ' + skill.endorsedBy : '';
+		
 		var endorsements = ` <span class="endorsement"> (${skill.endorsements} ${endorsedBy}) </span>`;
 		return '<li>' + skill.name.toUpperCase() + endorsements + '</li>';
 	});
