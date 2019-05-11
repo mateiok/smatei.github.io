@@ -1,0 +1,7 @@
+[
+	{"name": "js", "endorsements": 21, "endorsedBy": "Tolica"}, 
+	{"name": "html", "endorsements": 8}, 
+	{"name": "css", "endorsements": 12, "endorsedBy": "Sasa"}, 
+	{"name": "node js", "endorsements": 3},
+	{"name": "vscode", "endorsements":0}
+	]
